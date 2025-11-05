@@ -1,0 +1,165 @@
+@use "sass:math";
+
+// --- Spacing ---
+$space-xs: 0.25rem; // 4px
+$space-s: 0.5rem; // 8px
+$space-m: 1rem; // 16px
+$space-l: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-xxl: 2.5rem; // 40px
+$space-xxxl: 3rem; // 48px
+$space-xxxxl: 5rem; // 80px
+$space-xxxxxl: 7.5rem; // 120px
+
+// --- Colors ---
+$color-text: #000;
+$color-base: #EFDC06;
+$color-main: #D9D9D9;
+$color-bg: #fff;
+
+// --- Typography ---
+$font-size-base: 16;
+$font-family-gothic: "Helvetica Neue", Arial, "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+// --- Breakpoints ---
+$breakpoints: (
+    "tablet": 768px,
+    "desktop": 640px,
+    "philosophy": 500px,
+);
+
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// XDのトラッキング値をemに変換する
+// @param {number} $xd-value - XDのトラッキング値
+// @return {string} - em値
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+@mixin inner($mw: 1000px, $w: 88%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@mixin inner-fun($mw: 900px, $w: 83%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.body {
+    color: $color-text;
+}
+
+.header {
+    background-color: $color-text;
+
+    &__inner {
+        @include inner();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-bg;
+        padding-bottom: rem(15);
+        font-size: rem(15);
+    }
+
+    &__logo {
+        width: 180px;
+        margin-top: rem(20);
+    }
+
+    &__text {
+        color: $color-bg;
+        font-weight: normal;
+    }
+
+    &__text {
+        font-size: rem(13);
+    }
+}
+
+.gnav__list {
+    display: flex;
+    gap: 30px;
+    padding-top: rem(21);
+}
+
+//--main--//
+
+.sample {
+    &_img {
+        height: 640px;
+        // width: 100%;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+    }
+}
+
+.fun {
+    @include inner();
+
+    &__top {
+        text-align: center;
+        padding-top: 40px;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 55px;
+        padding-bottom: 15px;
+        font-size: rem(20);
+        position: relative;
+    }
+
+    &__title::before {
+        position: absolute;
+        bottom: -10px;
+        left: calc(50% - 30px);
+        width: 60px;
+        height: 5px;
+        content: '';
+        border-radius: 3px;
+        background: $color-base;
+    }
+}
+
+.about {
+    @include inner-fun();
+
+    &__text {
+        text-align: center;
+    }
+
+    &__texts {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+}
+
+//--３つのコース--//
+.cose {
+    &_three {
+        width: 300px;
+        /* 幅指定 */
+        height: 200px;
+        /* 高さ指定 */
+        border: solid 2px #000;
+        /* 枠線指定 */
+        background-color: #eee;
+        /* 背景色指定 */
+        border-radius: 10px 20px 40px 100px;
+    }
+}
