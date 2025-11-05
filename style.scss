@@ -108,14 +108,6 @@ $breakpoints: (
 .fun {
     @include inner();
 
-    &__top {
-        text-align: center;
-        padding-top: 40px;
-        font-size: 3rem;
-        font-weight: bold;
-        color: $color-textbold;
-    }
-
     &__title {
         color: $color-textbold;
         text-align: center;
@@ -149,7 +141,7 @@ $breakpoints: (
         color: $color-textbold;
         text-align: center;
         padding-top: 20px;
-        padding-bottom: 100px;
+        padding-bottom: 56px;
     }
 }
 
@@ -165,6 +157,7 @@ $breakpoints: (
         padding: 20px;
         padding-top: 30px;
         padding-bottom: 30px;
+        margin-bottom: 110px;
     }
 
 
@@ -259,5 +252,43 @@ $breakpoints: (
 //体験・見学はこちら
 
 .form {
-    &__inner {}
+    position: relative;
+    display: inline-block;
+
+    &__img {
+        height: 445px;
+        //width: 100%;
+        display: block;
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        /* 縦の中央 */
+        left: 50%;
+        /* 横の中央 */
+        transform: translate(-50%, -50%);
+        /* 中央にピッタリ */
+        background-color: rgba($color-main, 0.5);
+        width: 600px;
+        text-align: center;
+        height: 50px;
+        align-items: center;
+        font-weight: bold;
+    }
+}
+
+
+
+
+//インストラクター
+.instructor {
+
+    &__tops {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: $color-textbold;
+        padding-top: 110px;
+    }
 }
