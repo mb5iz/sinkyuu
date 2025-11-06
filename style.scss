@@ -1,5 +1,9 @@
 @use "sass:math";
 
+// ============================================
+// Variables
+// ============================================
+
 // --- Spacing ---
 $space-xs: 0.25rem; // 4px
 $space-s: 0.5rem; // 8px
@@ -11,7 +15,7 @@ $space-xxxl: 3rem; // 48px
 $space-xxxxl: 5rem; // 80px
 $space-xxxxxl: 7.5rem; // 120px
 
-// --- Colors ---//
+// --- Colors ---
 $color-base: #EFDC06;
 $color-main: #D9D9D9;
 $color-bg: #fff;
@@ -29,6 +33,10 @@ $breakpoints: (
     "philosophy": 500px,
 );
 
+// ============================================
+// Functions
+// ============================================
+
 @function rem($px-value) {
     @return #{math.div($px-value, $font-size-base)}rem;
 }
@@ -40,12 +48,15 @@ $breakpoints: (
     @return #{math.div($xd-value, 1000)}em;
 }
 
+// ============================================
+// Mixins
+// ============================================
+
 @mixin inner($mw: 1000px, $w: 88%) {
     max-width: $mw;
     width: $w;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 @mixin inner-fun($mw: 900px, $w: 83%) {
@@ -55,9 +66,18 @@ $breakpoints: (
     margin-right: auto;
 }
 
+
+// ============================================
+// Base
+// ============================================
+
 .body {
     color: $color-textbold;
 }
+
+// ============================================
+// Header
+// ============================================
 
 .header {
     background-color: #111;
@@ -80,31 +100,38 @@ $breakpoints: (
     &__text {
         color: $color-bg;
         font-weight: normal;
-    }
-
-    &__text {
         font-size: rem(13);
     }
 }
 
-.gnav__list {
-    display: flex;
-    gap: 30px;
-    padding-top: rem(21);
+.gnav {
+    &__list {
+        display: flex;
+        gap: 30px;
+        padding-top: rem(21);
+    }
+
+    &__item:hover {
+        color: $color-base;
+        transition: color 0.6s ease;
+    }
 }
 
-//--main--//
+// ============================================
+// Main
+// ============================================
 
+// --- Main Visual ---
 .sample {
     &_img {
         height: 640px;
-        // width: 100%;
         position: relative;
         margin: auto;
         overflow: hidden;
     }
 }
 
+// --- Fun Section ---
 .fun {
     @include inner();
 
@@ -115,17 +142,17 @@ $breakpoints: (
         padding-bottom: 15px;
         font-size: rem(20);
         position: relative;
-    }
 
-    &__title::before {
-        position: absolute;
-        bottom: -10px;
-        left: calc(50% - 30px);
-        width: 60px;
-        height: 5px;
-        content: '';
-        border-radius: 3px;
-        background: $color-base;
+        &::before {
+            position: absolute;
+            bottom: -10px;
+            left: calc(50% - 30px);
+            width: 60px;
+            height: 5px;
+            content: '';
+            border-radius: 3px;
+            background: $color-base;
+        }
     }
 }
 
@@ -138,44 +165,41 @@ $breakpoints: (
     }
 
     &__texts {
-        color: $color-textbold;
         text-align: center;
+        color: $color-textbold;
         padding-top: 20px;
         padding-bottom: 56px;
     }
 }
 
-//--３つのコース--//
+// --- Course Section ---
+@mixin inner-cose($mw: 1100px, $w: 88%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .cose {
-    @include inner();
-    //background-color: #000;
+    @include inner-cose();
 
     &__inner {
         background-color: $color-bg;
-        border: 10px solid $color-base; // ← 枠線を追加！
-        border-radius: 7px; // 角を丸くしたいとき
-        padding: 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        border: 10px solid $color-base;
+        border-radius: 7px;
+        padding: 30px 20px;
         margin-bottom: 110px;
     }
 
-
     &__three {
-        height: 200px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 50px;
-        background-color: $color-base;
-
         display: flex;
         justify-content: center;
         align-items: center;
         width: 500px;
         height: 60px;
+        margin: rem(10) auto 40px;
         border-radius: rem(50);
-        margin-top: rem(10);
-        margin-bottom: 40px;
+        background-color: $color-base;
     }
 
     &__text {
@@ -185,27 +209,55 @@ $breakpoints: (
         padding-top: rem(3);
         color: $color-textbold;
     }
-
 }
 
+// --- Image Section ---
 .image {
     display: flex;
     justify-content: center;
-    /* 中央揃え */
     gap: 10px;
-    /* 画像間の隙間 */
 
     &__img {
         width: 30%;
         text-align: center;
+        overflow: hidden;
+
+        &:hover img {
+            opacity: 0.7;
+            filter: brightness(1.2);
+        }
+
+        &:hover .image__text {
+            opacity: 0.7;
+            filter: brightness(1.2);
+        }
+
     }
+
+    .image__text {
+        &-canfu {
+            color: #D93A49;
+        }
+
+        &-taikyoku {
+            color: #1A7D28;
+        }
+
+        &-kizzu {
+            color: #FF6B1A;
+        }
+    }
+
 
     img {
         width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
+        transition: all 0.5s ease;
     }
+
+
 
     &__text {
         padding: 15px 0 0 0;
@@ -219,23 +271,6 @@ $breakpoints: (
         color: $color-textbold;
     }
 
-    @mixin btn-base {
-        height: 80px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 50px;
-        background-color: $color-main;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 150px;
-        height: 50px;
-        border-radius: rem(50);
-        margin-top: 4.1rem;
-        color: $color-textbold;
-    }
-
     &__btn {
         @include btn-base;
         margin-top: 2.8rem;
@@ -245,45 +280,47 @@ $breakpoints: (
         @include btn-base;
         margin-top: 1.3rem;
     }
+
+    &__bg {
+        background-color: $color-main;
+        border-radius: 7px;
+        padding: 30px 20px;
+        margin-bottom: 110px;
+
+        position: relative;
+        top: -30px; // ← 上に30px移動（重ねる）
+        z-index: 2;
+    }
 }
 
-
-
-//体験・見学はこちら
-
+// --- Form Section ---
 .form {
     position: relative;
     display: inline-block;
 
     &__img {
         height: 445px;
-        //width: 100%;
         display: block;
     }
 
     &__text {
         position: absolute;
         top: 50%;
-        /* 縦の中央 */
         left: 50%;
-        /* 横の中央 */
         transform: translate(-50%, -50%);
-        /* 中央にピッタリ */
-        background-color: rgba($color-main, 0.5);
         width: 600px;
-        text-align: center;
         height: 50px;
+        display: flex;
         align-items: center;
+        justify-content: center;
+        background-color: rgba($color-main, 0.5);
+        text-align: center;
         font-weight: bold;
     }
 }
 
-
-
-
-//インストラクター
+// --- Instructor Section ---
 .instructor {
-
     &__tops {
         text-align: center;
         font-size: 3rem;
