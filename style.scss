@@ -368,22 +368,18 @@ body {
         margin-left: 55px;
     }
 
-    .title_wrpper {
+    &__wrpper {
         position: relative;
         margin-top: 30px;
-        margin-bottom: 30px;
     }
 
     &__big {
         color: lighten($color-base, 15%);
         font-size: min(4.8vw, 72px);
         font-weight: 600;
-        left: 0.1em;
         letter-spacing: 0.05em;
         line-height: 1;
-        top: max(5.4vw, -50px);
-        z-index: 0;
-        left: 0.6em;
+        margin-top: 25px;
     }
 
     &__img {
@@ -393,30 +389,23 @@ body {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 80px;
+        height: auto;
 
         img {
             display: block;
             margin-top: 45px;
             margin-bottom: 45px;
-            width: 465px;
-            vertical-align: bottom;
+            width: 100%;
+            min-width: 556px;
+            height: auto;
             margin-right: 40px;
         }
-
-        &:nth-of-type(3) {
-            margin-bottom: 0;
-        }
-    }
-
-    &__rera {
-        position: relative;
     }
 
     .image__text {
         font-weight: bold;
         font-size: 2.5rem;
         color: #222;
-        margin-top: 93px;
         margin-bottom: 25px;
         z-index: 1;
         position: relative;
@@ -432,10 +421,6 @@ body {
         font-size: 1.1rem;
         color: $color-text;
         font-weight: bold;
-
-        strong {
-            font-size: .9rem;
-        }
     }
 
     &__btn {
@@ -462,9 +447,8 @@ body {
         }
 
         &__big {
-            left: 0;
-            font-size: min(7.3vw, 110px);
-            top: max(5.5vw, 40px);
+            font-size: 3.5rem;
+
         }
 
         &__block {
@@ -1082,7 +1066,7 @@ body {
     &__inner {
         @include inner(1200px);
         margin: 0 auto;
-        padding: 108px 20px;
+        padding: 173px 20px;
         box-sizing: border-box;
     }
 
