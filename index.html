@@ -19,7 +19,7 @@
             <div class="header__image">
                 <h1 class="header__logo">
                     <a href="index.html">
-                        <img src="./images/logo.black.PNG" alt="">
+                        <img src="./images/logo.black.PNG" class="header__icom" alt="">
                     </a>
                 </h1>
                 <a href="index.html">
@@ -27,7 +27,13 @@
                 </a>
             </div>
             <nav class="gnav">
-                <div class="gnav__inner">
+                <div class="gnav__hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="gnav__inner" id="js-nav">
                     <ul class="gnav__list">
                         <li class="gnav__item"><a href="./index.html">TOP</a></li>
                         <li class="gnav__item"><a href="nagoya.html">名古屋八事本部道場</a></li>
@@ -45,10 +51,25 @@
             <div class="mainvisual__inner">
                 <div class="sample">
                     <h3 class="sample_img">
-                        <img src="./images/fast.png" alt="sample" loading="lazy">
-                        <div class="sample__overlay-text">
-                            誰でも今すぐ<br><strong>”特別な自分”</strong><br>になれる。<br>キッズから生涯楽しめるカンフー・太極拳道場<br>CENTRAL
-                            WUSHU</div>
+                        <div class="sample__animasion">
+                            <img src="./images/fast.jpg" alt="">
+                            <img src="./images/gifu-in.jpg" alt="">
+                            <img src="./images/junia02.jpg" alt="">
+                            <img src="./images/nagoya-in.jpg" alt="">
+                            <img src="./images/junia03.jpg" alt="">
+                        </div>
+
+
+                        <section class="fun fade-in">
+                            <div class="sample__overlay-text">
+                                誰でも今すぐ<br>
+                                <strong>”特別な自分”</strong><br>
+                                になれる。<br>
+                                <small>
+                                    キッズから生涯楽しめるカンフー・太極拳道場<br>CENTRAL WUSHU
+                                </small>
+                            </div>
+                        </section>
                     </h3>
                 </div>
 
@@ -60,9 +81,11 @@
                     <section class="about fade-in">
                         <div class="about">
                             <p class="about__text">セントラルウーシューでは４歳から８０代の方まで幅広い年代の方が所属し日々技を磨いています。</p>
-                            <p class="about__texts">
-                                コースは４つあり『カンフー』『太極拳』『キッズ・ジュニア』『フィットネス』から自分にあったクラスをお選びいただけます！通常クラス以外にも、個別指導の『パーソナルレッスン・トレーニング』や、ヌンチャク講座などの『イベントレッスン』もあります。子供から大人まで・愛好者から競技選手まで、一生楽しめるのがカンフーの特徴です。カンフーの学びは人生の喜びとなります。
-                            </p>
+                            <section class="about fade-in">
+                                <p class="about__texts">
+                                    コースは４つあり『カンフー』『太極拳』『キッズ・ジュニア』『フィットネス』から自分にあったクラスをお選びいただけます！通常クラス以外にも、個別指導の『パーソナルレッスン・トレーニング』や、ヌンチャク講座などの『イベントレッスン』もあります。子供から大人まで・愛好者から競技選手まで、一生楽しめるのがカンフーの特徴です。カンフーの学びは人生の喜びとなります。
+                                </p>
+                            </section>
                         </div>
                     </section>
                 </section>
@@ -114,7 +137,7 @@
                             <a class="image__img">
                                 <div class="image__block">
                                     <div class="image__head">
-                                        <div class="image__wrppper">
+                                        <div class="image__wrpper">
                                             <p class="image__big">Junior</p>
                                             <p class="image__text">ジュニア</p>
                                         </div>
