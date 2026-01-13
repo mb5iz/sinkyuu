@@ -49,76 +49,59 @@
     <section class="informathion">
         <div class="informathion__inner">
             <section class="informathion fade-in">
-                <h2 class="informathion__tops access">Access</h2>
-                <h2 class="fun__title">アクセス</h2>
+                <h2 class="informathion__tops access">Inquiry</h2>
+                <h2 class="fun__title">お問い合わせ</h2>
             </section>
         </div>
     </section>
-    <section class="informations fade-in">
-        <section class="informations">
-            <div class="informations__container">
-                <div class="informations__dojo-info nagoya">
-                    <div class="informations__image-placeholder"><img src="./images/nagoya-aut.jpg" alt=""></div>
-                    <h3 class="informations__dojo-name">名古屋八事本部道場</h3>
-                    <p class="informations__dojo-reading">（なごややごとほんぶどうじょう）</p>
-                    <p class="informations__contact-label">ご予約・お問い合わせ</p>
-                    <p class="informations__tel-number">TEL 052-836-1070</p>
-                    <div class="informations__reservation-buttons">
-                        <a href="#" class="informations__button informations__button--email">
-                            <i class="fas fa-envelope"></i> メールでご予約
-                        </a>
-                        <a href="https://lin.ee/MosvGyQ" class="informations__button informations__button--line"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-line"></i> LINEでご予約
-                        </a>
-                    </div>
-                    <div class="informations__access-info">
-                        <p class="informations__info-item"><span
-                                class="informations__label">住所</span>〒468-0077<br>名古屋市天白区八事山210日興ビル1階
-                        </p>
-                        <p class="informations__info-item"><span
-                                class="informations__label">アクセス</span>・公共交通機関でお越しの方<br>名古屋市営地下鉄、名城線・鶴舞線「八事駅」2番出口より飯田街道を塩釜口方面へ徒歩5分。<br>名城大学薬学部（八事キャンパス）向かい側。
-                        </p>
-                        <p class="informations__info-item"><span
-                                class="informations__label informations__label--empty"></span>・お車でお越しの方<br>飯田街道沿い、名城大学薬学部向かい側。<br>専用駐車場はございません。お近くのコインパーキングをご利用下さい。
-                        </p>
-                    </div>
-                    <a href="https://maps.app.goo.gl/vKoz82EFig9mTo7W6" class="informations__google-map-button">
-                        <i class="fas fa-map-marker-alt"></i> Google Map
-                    </a>
+    <section class="inquiry">
+        <div class="inquiry__inner">
+            <h3 class="inquiry__maintext">LINEでのお問い合わせ</h3>
+            <h3 class="inquiry__basictext">友だちに追加してチャットでお問い合わせ下さい。</h3>
+
+            <a href="https://lin.ee/MosvGyQ" class="inquiry__link" target="_blank" rel="noopener noreferrer">
+                <div class="inquiry__content">
+                    <img src="./images/line-icon.png" class="inquiry__image" alt="LINE公式アカウント">
+                    <span class="inquiry__btn">友だち追加</span>
                 </div>
-                <div class="informations__dojo-info gifu">
-                    <div class="informations__image-placeholder"><img src="./images/gifu-aut.jpg" alt=""></div>
-                    <h3 class="informations__dojo-name">岐阜道場</h3>
-                    <p class="informations__dojo-reading">（ぎふどうじょう）</p>
-                    <p class="informations__contact-label">ご予約・お問い合わせ</p>
-                    <p class="informations__tel-number">TEL **(名古屋本部道場)** 052-836-1070</p>
-                    <div class="informations__reservation-buttons">
-                        <a href="#" class="informations__button informations__button--email">
-                            <i class="fas fa-envelope"></i> メールでご予約
-                        </a>
-                        <a href="https://lin.ee/MosvGyQ" class="informations__button informations__button--line"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-line"></i> LINEでご予約
-                        </a>
-                    </div>
-                    <div class="informations__access-info">
-                        <p class="informations__info-item"><span
-                                class="informations__label">住所</span>〒501-6018<br>岐阜県羽島郡岐南町みやまち4丁目102
-                        </p>
-                        <p class="informations__info-item"><span
-                                class="informations__label">アクセス</span>・公共交通機関でお越しの方<br>名鉄各務原線「岐南駅」より徒歩6分</p>
-                        <p class="informations__info-item"><span
-                                class="informations__label informations__label--empty"></span>・お車でお越しの方<br>専用駐車場
-                            あり<br>道場前の駐車場をご利用ください。<br>駐車可能台数に限りがございます。</p>
-                    </div>
-                    <a href="https://maps.app.goo.gl/6HdRXXyezy2Y7fH1A" class="informations__google-map-button">
-                        <i class="fas fa-map-marker-alt"></i> Google Map
-                    </a>
+            </a>
+
+            <h3 class="inquiry__basictext inquiry__sub">お問い合わせいただいた内容のご返信以外に、広告やメルマガ等を配信することはございません。</h3>
+
+            <h3 class="inquiry__maintext inquiry__padding">メールでのお問い合わせ</h3>
+
+            <section class="contact">
+                <div class="contact__inner">
+                    <h2 class="contact__title">お問い合わせフォーム</h2>
+
+                    <form action="https://formspree.io/f/your_id" method="POST" class="contact__form">
+                        <div class="contact__item">
+                            <label for="name" class="contact__label">お名前<span>必須</span></label>
+                            <input type="text" id="name" name="name" class="contact__input" placeholder="例：山田 太郎"
+                                required>
+                        </div>
+
+                        <div class="contact__item">
+                            <label for="email" class="contact__label">メールアドレス<span>必須</span></label>
+                            <input type="email" id="email" name="_replyto" class="contact__input"
+                                placeholder="例：example@mail.com" required>
+                        </div>
+
+                        <div class="contact__item">
+                            <label for="message" class="contact__label">お問い合わせ内容<span>必須</span></label>
+                            <textarea id="message" name="message" class="contact__textarea" rows="6"
+                                placeholder="内容を入力してください" required></textarea>
+                        </div>
+
+                        <div class="contact__submit">
+                            <button type="submit" class="contact__btn">この内容で送信する</button>
+                        </div>
+                    </form>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </section>
+
 
     <footer class="footer">
         <div class="footer__container">

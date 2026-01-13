@@ -80,6 +80,7 @@ body {
     color: $color-text;
     min-height: 100vh;
     background-color: $color-base;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 
@@ -98,7 +99,7 @@ body {
     z-index: 100;
 
     &__inner {
-        @include inner(1350px, 95%);
+        @include inner(1250px, 95%);
         background-color: rgba(255, 255, 255, 0.85); // 白の半透明
         border-radius: 100px; // 左右を丸くする
         padding: 8px 30px; // 内側の余白
@@ -129,8 +130,12 @@ body {
             width: 76%;
         }
 
+        @media (max-width: 390px) {
+            width: 67%;
+        }
+
         @media (max-width: 320px) {
-            width: 61%;
+            width: 84%;
         }
     }
 
@@ -139,6 +144,10 @@ body {
 
         @media (max-width: 1024px) {
             width: 160px;
+        }
+
+        @media (max-width: 320px) {
+            width: 100px;
         }
     }
 
@@ -277,15 +286,24 @@ body {
         @media (max-width: 768px) {
             font-size: 2.8rem;
             padding-bottom: 100px;
+            padding-top: 41%;
         }
 
         @media (max-width: 425px) {
             font-size: 1.8rem;
-            padding-top: 54%;
+            padding-top: 76%;
+        }
+
+        @media (max-width: 390px) {
+            padding-top: 90%;
         }
 
         @media (max-width: 375px) {
-            padding-top: 59%;
+            padding-top: 84%;
+        }
+
+        @media (max-width: 320px) {
+            padding-top: 98%;
         }
 
         strong {
@@ -297,6 +315,10 @@ body {
 
             @media (max-width: 425px) {
                 font-size: 3.3rem;
+            }
+
+            @media (max-width: 320px) {
+                font-size: 2.8rem;
             }
         }
 
@@ -314,9 +336,14 @@ body {
             @media (max-width: 375px) {
                 font-size: .9rem;
             }
+
+            @media (max-width: 320px) {
+                font-size: .8rem;
+            }
         }
     }
 
+    /*
     @media (max-width: 1400px) {
         &_img {
             .sample__overlay-text {
@@ -334,6 +361,7 @@ body {
             }
         }
     }
+        */
 
     .sample__animasion {
         position: absolute;
@@ -454,7 +482,7 @@ body {
 
         @media (max-width: 768px) {
             &:nth-of-type(1) {
-                margin-top: 167px;
+                margin-top: 252px;
                 padding-top: 13px;
                 padding-bottom: 13px;
                 width: 65%;
@@ -704,7 +732,7 @@ body {
     }
 
     &__big {
-        color: lighten($color-base, 15%);
+        color: lighten($color-base, 20%);
         font-size: 3.7rem;
         font-weight: 600;
         letter-spacing: 0.05em;
@@ -744,7 +772,7 @@ body {
         }
 
         @media (max-width: 768px) {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             margin-bottom: 0;
         }
 
@@ -757,7 +785,7 @@ body {
         }
 
         @media (max-width: 320px) {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
 
         span {
@@ -1767,11 +1795,167 @@ body {
 
 
 
+/////////////////////////////////////////////////
+///お問い合わせ
+/////////////////////////////////////////////////
+.inquiry {
+
+    &__inner {
+        @include inner(1000px);
+        text-align: center;
+    }
+
+    &__maintext {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    &__basictext {
+        font-size: 1.2rem;
+    }
+
+    &__sub {
+        padding-top: 20px;
+    }
+
+    &__padding {
+        padding-top: 185px;
+    }
+
+    &__image {
+        width: 80px;
+        height: auto;
+    }
+
+    &__link {
+        display: inline-block;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        margin-top: 30px;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.8;
+            transform: translateY(-3px);
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    &__image {
+        width: 170px;
+        height: auto;
+    }
+
+    &__btn {
+        display: inline-block;
+        background-color: #06C755;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 40px;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
+    }
+
+    .contact {
+
+        &__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        &__title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        &__item {
+            margin-bottom: 25px;
+        }
+
+        &__label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1rem;
+
+            span {
+                background: #e74c3c;
+                color: #fff;
+                font-size: 0.7rem;
+                padding: 2px 6px;
+                border-radius: 3px;
+                margin-left: 10px;
+                vertical-align: middle;
+            }
+        }
+
+        &__input,
+        &__textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid $color-text;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+
+            &:focus {
+                outline: none;
+                border-color: #e74c3c;
+                box-shadow: 0 0 5px rgba(231, 77, 60, 0.2);
+                color: #888;
+            }
+        }
+
+        &__submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        &__btn {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 60px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: #e74c3c;
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+
+
 //フォーカス//
 :focus-visible {
     outline: revert;
     outline-offset: 2px;
-    color: $color-base;
 }
 
 /* フェードインの初期状態 */
