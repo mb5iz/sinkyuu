@@ -68,13 +68,14 @@
 
             <h3 class="inquiry__basictext inquiry__sub">お問い合わせいただいた内容のご返信以外に、広告やメルマガ等を配信することはございません。</h3>
 
-            <h3 class="inquiry__maintext inquiry__padding">メールでのお問い合わせ</h3>
+            <h3 id="contact-section" class="inquiry__maintext inquiry__padding">メールでのお問い合わせ</h3>
 
             <section class="contact">
                 <div class="contact__inner">
                     <h2 class="contact__title">お問い合わせフォーム</h2>
 
-                    <form action="https://formspree.io/f/your_id" method="POST" class="contact__form">
+                    <form action="https://formspree.io/f/mvzzowve" method="POST" class="contact__form">
+
                         <div class="contact__item">
                             <label for="name" class="contact__label">お名前<span>必須</span></label>
                             <input type="text" id="name" name="name" class="contact__input" placeholder="例：山田 太郎"
@@ -83,7 +84,7 @@
 
                         <div class="contact__item">
                             <label for="email" class="contact__label">メールアドレス<span>必須</span></label>
-                            <input type="email" id="email" name="_replyto" class="contact__input"
+                            <input type="email" id="email" name="email" class="contact__input"
                                 placeholder="例：example@mail.com" required>
                         </div>
 
@@ -96,8 +97,17 @@
                         <div class="contact__submit">
                             <button type="submit" class="contact__btn">この内容で送信する</button>
                         </div>
+
                     </form>
                 </div>
+                <h3 class="inquiry__basictext inquiry__subs">お問い合わせいただいた内容のご返信以外に、広告やメルマガ等を配信することはございません。</h3>
+
+                <h3 class="inquiry__maintext inquiry__padding">お電話でのお問い合わせ</h3>
+                <a href="tel:0528361070" class="form__tel-link">
+                    <p class="inquiry__tell">052-836-1070</p>
+                </a>
+                <p class="inquiry__subs">セントラルウーシューのホームページを見た」とお伝え下さい。
+                    レッスン中等、お電話に出られないことがございます。<br> お手数ですが、留守番電話にご要件を残していただけましたら折り返しお電話させていただきます。</p>
             </section>
         </div>
     </section>
@@ -115,7 +125,7 @@
             </div>
 
             <div class="footer__reservation-buttons">
-                <a href="#" class="footer__button footer__button--email">
+                <a href="tell.html#contact-section" class="footer__button footer__button--email">
                     <i class="fas fa-envelope"></i> メールでご予約
                 </a>
                 <a href="https://lin.ee/MosvGyQ" class="footer__button footer__button--line" target="_blank"
@@ -145,7 +155,6 @@
 
             <nav class="footer__nav footer__nav--sub">
                 <ul class="footer__menu-list">
-                    <li><a href="./company.html" class="footer__menu-item">会社概要</a></li>
                     <li><a href="./privacy.html" class="footer__menu-item">プライバシーポリシー</a></li>
                 </ul>
             </nav>
@@ -168,7 +177,7 @@
                 });
             }, {
                 // 0.2（20%）くらい画面に入ってから反応するように設定
-                threshold: 0.2
+                threshold: 0.1
             });
 
             const targetElements = document.querySelectorAll('.fade-in');

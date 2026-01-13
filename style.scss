@@ -146,6 +146,14 @@ body {
             width: 160px;
         }
 
+        @media (max-width: 768px) {
+            width: 144px;
+        }
+
+        @media (max-width: 425px) {
+            width: 120px;
+        }
+
         @media (max-width: 320px) {
             width: 100px;
         }
@@ -167,6 +175,10 @@ body {
 .gnav {
     font-size: 1rem;
     flex-shrink: 0;
+
+    #contact-section {
+        scroll-margin-top: 100px;
+    }
 
     @media (max-width: 768px) {
         font-size: .8rem;
@@ -265,6 +277,8 @@ body {
 // --- Main Visual ---
 .sample {
     width: 100%;
+    position: relative;
+    min-height: 100vh;
 
     .sample__overlay-text {
         text-align: center;
@@ -273,11 +287,11 @@ body {
         font-weight: bold;
         z-index: 10;
         width: 100%;
-        line-height: 1.4;
-        padding-top: 23%;
+        line-height: 1.2;
+        padding-top: 30%;
         padding-bottom: 300px;
         background: none;
-        line-height: 1.2;
+        position: relative;
 
         @media (max-width: 1024px) {
             font-size: 3.5rem;
@@ -286,16 +300,16 @@ body {
         @media (max-width: 768px) {
             font-size: 2.8rem;
             padding-bottom: 100px;
-            padding-top: 41%;
+            padding-top: 56%;
         }
 
         @media (max-width: 425px) {
             font-size: 1.8rem;
-            padding-top: 76%;
+            padding-top: 75%;
         }
 
         @media (max-width: 390px) {
-            padding-top: 90%;
+            padding-top: 100%;
         }
 
         @media (max-width: 375px) {
@@ -303,7 +317,7 @@ body {
         }
 
         @media (max-width: 320px) {
-            padding-top: 98%;
+            padding-top: 101%;
         }
 
         strong {
@@ -343,26 +357,6 @@ body {
         }
     }
 
-    /*
-    @media (max-width: 1400px) {
-        &_img {
-            .sample__overlay-text {
-                top: 71%;
-                left: 45%;
-            }
-        }
-    }
-
-    @media (max-width: 1024px) {
-        &_img {
-            .sample__overlay-text {
-                top: 50%;
-                left: 45%;
-            }
-        }
-    }
-        */
-
     .sample__animasion {
         position: absolute;
         top: 0;
@@ -370,6 +364,7 @@ body {
         width: 100%;
         height: 100%;
         z-index: 0;
+        overflow: hidden;
 
         &::after {
             content: "";
@@ -378,9 +373,9 @@ body {
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); // 黒の40%透過
-            z-index: 5; // 画像(z-index: 1想定)より上で、文字より下の数値
-            pointer-events: none; // 下の要素のクリックを邪魔しない
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 5;
+            pointer-events: none;
         }
 
         img {
@@ -391,8 +386,21 @@ body {
             height: 100%;
             object-fit: cover;
             opacity: 0;
-
             animation: image-switch-animation 25s infinite;
+
+            &.img-shift {
+                @media (max-width: 768px) {
+                    width: 130% !important;
+                    left: -5% !important;
+                    max-width: none !important;
+                    height: 100% !important;
+                }
+
+                @media (max-width: 425px) {
+                    width: 160% !important;
+                    left: 0% !important;
+                }
+            }
 
             &:nth-of-type(1) {
                 animation-delay: 0s;
@@ -415,27 +423,49 @@ body {
             }
         }
     }
+}
 
-    @keyframes image-switch-animation {
-        0% {
-            opacity: 0;
-        }
+@keyframes image-switch-animation {
+    0% {
+        opacity: 0;
+    }
 
-        5% {
-            opacity: 1;
-        }
+    5% {
+        opacity: 1;
+    }
 
-        25% {
-            opacity: 1;
-        }
+    25% {
+        opacity: 1;
+    }
 
-        30% {
-            opacity: 0;
-        }
+    30% {
+        opacity: 0;
+    }
 
-        100% {
-            opacity: 0;
-        }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes image-switch-animation {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -482,7 +512,7 @@ body {
 
         @media (max-width: 768px) {
             &:nth-of-type(1) {
-                margin-top: 252px;
+                margin-top: 280px;
                 padding-top: 13px;
                 padding-bottom: 13px;
                 width: 65%;
@@ -494,6 +524,7 @@ body {
             &:nth-of-type(1) {
                 width: 85%;
                 font-size: 1.4rem;
+                margin-top: 230px;
             }
         }
 
@@ -501,6 +532,7 @@ body {
             &:nth-of-type(1) {
                 width: 99%;
                 font-size: 1.3rem;
+                margin-top: 205px;
             }
         }
     }
@@ -518,11 +550,19 @@ body {
     padding: 60px 80px;
     border-radius: 10px;
     box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
     #privacy-color {
         padding: 40px 20px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -612,6 +652,10 @@ body {
         &.bottom {
             padding-bottom: 93px;
         }
+
+        @media (max-width: 425px) {
+            padding: 0 0 0 0;
+        }
     }
 
     &__text {
@@ -627,6 +671,14 @@ body {
         @media (max-width: 375px) {
             margin-bottom: 15px;
         }
+    }
+
+    .highlight {
+        background: linear-gradient(transparent 50%, $color-base 50%);
+        padding: 0 0.2em;
+        font-weight: bold;
+        color: $color-text;
+        display: inline;
     }
 
     &__image__texts:nth-of-type(1) {
@@ -1052,6 +1104,7 @@ body {
             padding: 0;
         }
 
+        &__link,
         &__tel-link {
             text-decoration: none;
             color: inherit;
@@ -1060,7 +1113,9 @@ body {
             justify-content: center;
             align-items: center;
             width: 100%;
+            /* これで横幅いっぱい */
             height: 100%;
+            /* これで縦幅いっぱい */
             cursor: pointer;
         }
     }
@@ -1265,14 +1320,62 @@ body {
 
         &.about {
             padding-top: 164px;
+
+            @media (max-width: 425px) {
+                padding-top: 0px;
+            }
         }
 
         &.access {
-            padding-top: 127px;
+            padding-top: 173px;
         }
 
         &.privacy {
-            padding-top: 234px;
+            padding-top: 173px;
+
+            @media (max-width: 768px) {
+                padding-top: 127px;
+            }
+
+            @media (max-width: 425px) {
+                padding-top: 122px;
+            }
+        }
+    }
+}
+
+.privacy {
+    &__explanation {
+
+        padding-bottom: 30px;
+        font-size: 1.1rem;
+
+        @media (max-width: 768px) {
+            padding-top: 30px;
+            font-size: .9rem;
+            padding-bottom: 30px;
+        }
+
+        @media (max-width: 416px) {
+            padding-top: 30px;
+            font-size: .8rem;
+            padding-bottom: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 1.1rem;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    &__text {
+        padding-bottom: 20px;
+
+        @media (max-width: 768px) {
+            font-size: .8rem;
         }
     }
 }
@@ -1349,6 +1452,14 @@ body {
         font-size: 1.2rem;
         font-weight: bold;
         margin-bottom: 20px;
+        min-height: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            min-height: auto;
+        }
     }
 
     &__reservation-buttons {
@@ -1512,14 +1623,17 @@ body {
         transition: background-color 0.3s;
 
         @media (max-width: 768px) {
-            width: 80%;
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
             font-size: .9rem;
-            margin-left: 10%;
         }
 
         @media (max-width: 425px) {
-            width: 80%;
+            width: 100%;
             font-size: .9rem;
+            max-width: 310px;
+            margin: 0 auto;
         }
 
         & i {
@@ -1668,6 +1782,10 @@ body {
         margin: 0 auto;
         padding: 173px 20px;
         box-sizing: border-box;
+
+        @media (max-width: 768px) {
+            padding: 127px 20px;
+        }
     }
 
     &__header {
@@ -1677,6 +1795,10 @@ body {
     &__title {
         font-weight: 700;
         font-size: rem(34);
+
+        @media (max-width: 425px) {
+            font-size: 1.5rem;
+        }
     }
 
     &__divider {
@@ -1697,38 +1819,6 @@ body {
     text-align: center;
     font-size: 1.4rem;
     font-weight: bold;
-}
-
-/////////////////////////////////////////////////
-///プライバシー
-/////////////////////////////////////////////////
-.informathion {
-    &__inner {
-        line-height: 1.5;
-    }
-
-}
-
-.privacy {
-    &__inner {
-        @include inner(900px);
-    }
-
-    &__title {
-        font-weight: bold;
-    }
-
-    &__explanation {
-        padding-bottom: 102px;
-    }
-
-    &__text {
-        padding-bottom: 20px;
-
-        &.line {
-            padding-bottom: 15px;
-        }
-    }
 }
 
 
@@ -1809,23 +1899,80 @@ body {
         font-weight: bold;
         font-size: 2rem;
         margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            font-size: 1.7rem;
+            padding-top: 30px;
+        }
+
+        @media (max-width: 425px) {
+            font-size: 1.5rem;
+        }
     }
 
     &__basictext {
         font-size: 1.2rem;
+
+        @media (max-width: 768px) {
+            font-size: .9rem;
+        }
     }
 
     &__sub {
         padding-top: 20px;
     }
 
+    &__subs {
+        padding-top: 40px;
+
+        @media (max-width: 768px) {
+            font-size: .9rem;
+            padding-bottom: 30px;
+        }
+    }
+
     &__padding {
         padding-top: 185px;
+
+        @media (max-width: 768px) {
+            padding-top: 85px;
+        }
+
+        @media (max-width: 425px) {
+            padding-top: 90px;
+        }
     }
 
     &__image {
         width: 80px;
         height: auto;
+    }
+
+    &__tell {
+        padding-top: 4%;
+        font-size: 3.7rem;
+        font-weight: bold;
+        transition: opacity 0.3s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 3.2rem;
+        }
+
+        @media (max-width: 425px) {
+            font-size: 2.7rem;
+        }
+
+        @media (max-width: 375px) {
+            font-size: 2.7rem;
+        }
+
+        @media (max-width: 320px) {
+            font-size: 2.2rem;
+        }
     }
 
     &__link {
@@ -1857,6 +2004,14 @@ body {
     &__image {
         width: 170px;
         height: auto;
+
+        @media (max-width: 768px) {
+            width: 150px;
+        }
+
+        @media (max-width: 425px) {
+            width: 140px;
+        }
     }
 
     &__btn {
@@ -1868,6 +2023,10 @@ body {
         border-radius: 30px;
         font-size: 1.1rem;
         box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
     }
 
     .contact {
@@ -1886,6 +2045,10 @@ body {
             font-size: 1.5rem;
             margin-bottom: 30px;
             font-weight: bold;
+
+            @media (max-width: 425px) {
+                font-size: 1.25rem;
+            }
         }
 
         &__item {
@@ -1897,6 +2060,10 @@ body {
             font-weight: bold;
             margin-bottom: 8px;
             font-size: 1rem;
+
+            @media (max-width: 425px) {
+                font-size: .9rem;
+            }
 
             span {
                 background: #e74c3c;
@@ -1945,6 +2112,20 @@ body {
             &:hover {
                 background-color: #e74c3c;
                 transform: translateY(-2px);
+            }
+
+            @media (max-width: 425px) {
+                padding: 21px 43px;
+                border: none;
+                border-radius: 50px;
+                font-size: .8rem;
+            }
+
+            @media (max-width: 320px) {
+                padding: 21px 43px;
+                border: none;
+                border-radius: 50px;
+                font-size: .8rem;
             }
         }
     }
